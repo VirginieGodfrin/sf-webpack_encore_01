@@ -11,4 +11,8 @@ import '../css/app.css';
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js !!! xxx');
+//to point to a file relative to the the current use ./ or ../
+//const getNiceMessage = require('./get_nice_message');
+//import and export fct are the official way to do module loading in ECMAScript
+import getNiceMessage from './get_nice_message';
+console.log(getNiceMessage(6));
