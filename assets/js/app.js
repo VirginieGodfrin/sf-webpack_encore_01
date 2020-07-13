@@ -9,10 +9,12 @@
 import '../css/app.css';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
-// import $ from 'jquery';
+// Because ther is no ./ behind the filename wb know that he need to look into node_modules/
+import $ from 'jquery'
 
 //to point to a file relative to the the current use ./ or ../
 //const getNiceMessage = require('./get_nice_message');
 //import and export fct are the official way to do module loading in ECMAScript
 import getNiceMessage from './get_nice_message';
 console.log(getNiceMessage(6));
+
