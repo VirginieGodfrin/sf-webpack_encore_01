@@ -11,6 +11,9 @@ import '../css/app.css';
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // Because ther is no ./ behind the filename wb know that he need to look into node_modules/
 import $ from 'jquery'
+// All modules in webpack lives in isolation, 
+// if you set variable in one file, it won't be available in any other files.
+import 'bootstrap';
 
 //to point to a file relative to the the current use ./ or ../
 //const getNiceMessage = require('./get_nice_message');
@@ -18,3 +21,10 @@ import $ from 'jquery'
 import getNiceMessage from './get_nice_message';
 console.log(getNiceMessage(6));
 
+$('.dropdown-toggle').dropdown();
+$('.custom-file-input').on('change', function(event) {
+    var inputFile = event.currentTarget;
+    $(inputFile).parent()
+        .find('.custom-file-label')
+        .html(inputFile.files[0].name);
+});
