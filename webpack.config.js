@@ -29,6 +29,11 @@ Encore
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
+    
+    // modify config second way:
+     .configureSplitChunks(function(splitChunks){
+         splitChunks.minSize = 20000;
+     })
 
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
@@ -71,5 +76,12 @@ Encore
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
 ;
+
+// generate webpack config
+// modify config -> first way
+//const config = Encore.getWebpackConfig();
+//config.optimization.splitChunks.minSize = 20000;
+
+//module.exports = config;
 
 module.exports = Encore.getWebpackConfig();
