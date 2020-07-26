@@ -18,7 +18,7 @@ import 'bootstrap';
 //to point to a file relative to the the current use ./ or ../
 //const getNiceMessage = require('./get_nice_message');
 //import and export fct are the official way to do module loading in ECMAScript
-import getNiceMessage from './get_nice_message';
+import getNiceMessage from './components/get_nice_message';
 console.log(getNiceMessage(6));
 
 $('.dropdown-toggle').dropdown();

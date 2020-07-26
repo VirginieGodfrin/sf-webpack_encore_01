@@ -1,5 +1,11 @@
 {% extends 'content_base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    
+    {{ encore_entry_script_tags('article_show') }}
+{% endblock %}
+
 {% block title %}Read: {{ article.title }}{% endblock %}
 
 {% block content_body %}
@@ -81,5 +87,6 @@
 {% block javascripts %}
     {{ parent() }}
 
-    <script src="{{ asset('js/article_show.js') }}"></script>
+    {{ encore_entry_script_tags('article_show') }}
 {% endblock %}
+
