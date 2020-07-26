@@ -52,6 +52,11 @@ Encore
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
+//  copy file from one place to another
+    .copyFiles({
+        from:'./assets/images',
+        to: 'images/[path][name].[hash:8].[ext]'
+    })
 
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
