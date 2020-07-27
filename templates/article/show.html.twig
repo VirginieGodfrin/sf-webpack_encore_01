@@ -1,10 +1,6 @@
 {% extends 'content_base.html.twig' %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    
-    {{ encore_entry_script_tags('article_show') }}
-{% endblock %}
+
 
 {% block title %}Read: {{ article.title }}{% endblock %}
 
@@ -90,3 +86,8 @@
     {{ encore_entry_script_tags('article_show') }}
 {% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags('article_show') }}
+{% endblock %}
