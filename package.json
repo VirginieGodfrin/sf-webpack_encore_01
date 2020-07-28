@@ -1,6 +1,7 @@
 {
     "devDependencies": {
         "@symfony/webpack-encore": "^0.30.0",
+        "autocomplete.js": "^0.37.1",
         "bootstrap": "^4.5.0",
         "core-js": "^3.0.0",
         "dropzone": "^5.7.2",

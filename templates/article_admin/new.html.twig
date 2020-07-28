@@ -2,10 +2,8 @@
 
 {% block javascripts %}
     {{ parent() }}
-    {{ encore_entry_script_tags('admin_article_form') }}
-
-    <script src="{{ asset('js/algolia-autocomplete.js') }}"></script>
     
+    {{ encore_entry_script_tags('admin_article_form') }}
 {% endblock %}
 
 {% block stylesheets %}
