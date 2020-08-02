@@ -54,6 +54,8 @@ Encore
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
+    
+    .enablePostCssLoader()
 //  copy file from one place to another
     .copyFiles({
         from:'./assets/images',
@@ -68,6 +70,9 @@ Encore
 
     // enables Sass/SCSS support
     .enableSassLoader()
+    // enable postCass is a libray that allows you to run things at the end of your css being processed
+    // the easiest way to integrate autoprefixer
+    .enablePostCssLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
