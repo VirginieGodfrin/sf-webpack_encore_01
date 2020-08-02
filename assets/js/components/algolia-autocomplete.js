@@ -1,8 +1,9 @@
 import $ from 'jquery';
 import autocomplete from 'autocomplete.js/dist/autocomplete.jquery';
+import '../../css/algolia-autocomplete.scss';
 
-$(document).ready(function() {
-    $('.js-user-autocomplete').each(function() {
+export default function($elements, dataKey, displayKey){    
+    $elements.each(function() {
         var autocompleteUrl = $(this).data('autocomplete-url');
 
         $(this).autocomplete({hint: false}, [
@@ -11,12 +12,15 @@ $(document).ready(function() {
                     $.ajax({
                         url: autocompleteUrl+'?query='+query
                     }).then(function(data) {
-                        cb(data.users);
+                        if(dataKey){
+                            data = data[dataKey];
+                        }
+                        cb(data);
                     });
                 },
-                displayKey: 'email',
+                displayKey: displayKey,
                 debounce: 500 // only request every 1/2 second
             }
         ])
     });
-});
+};
